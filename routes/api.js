@@ -1,16 +1,16 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
 /* GET users listing. */
-router.get('/', function(req, res) {
+router.get('/', (req, res) => {
   res.send('respond with a api');
 });
 
 /* Say Something */
-router.post('/saysomt', function(req, res){
+router.post('/saysomt',(req, res) => {
  try
  {
-  var data = req.body;
+  let data = req.body;
   res.send(composeGreet(data.name));
  }catch(e)
  {
@@ -18,7 +18,7 @@ router.post('/saysomt', function(req, res){
  }
 });
 
-var composeGreet= function(name)
+let composeGreet= function(name)
 {
   return "hello " + name +"\n";
 };
